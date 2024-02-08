@@ -8,19 +8,63 @@
     <title>Tomato Timer</title>
   </head>
   <body>
-    <button
-      id="startStop"
-      class="w-30 h-10 rounded mx-6 my-4 text-center bg-gray-200 text-gray-200 dark:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-600 ring-[1px] px-8 /"
-    >
-      開始
-    </button>
-    <button
-      id="reset"
-      class="w-30 h-10 rounded mx-6 my-4 text-center bg-gray-200 text-gray-200 dark:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-600 ring-[1px] px-8 /"
-    >
-      重置
-    </button>
+    <!-- Logo -->
+    <div class="Logo">
+      <img src="spotifylogo.png" alt="spotifylogo" />
+    </div>
 
-    <p class="timer">00:00</p>
+    <!-- 計時器的圓圈 -->
+    <div id="timer">
+      <div class="circle" style="--clr: #fff">
+        <div class="circle focus_circle"></div>
+
+        <!-- 圓圈本圈:3 -->
+        <svg>
+          <circle cx="70" cy="70" r="70"></circle>
+          <circle cx="70" cy="70" r="70"></circle>
+        </svg>
+        <div id="focus">00:00</div>
+      </div>
+
+      <div class="circle" style="--clr: #fff">
+        <div class="circle rest_circle"></div>
+        <svg>
+          <circle cx="70" cy="70" r="70"></circle>
+          <circle cx="70" cy="70" r="70"></circle>
+        </svg>
+        <div id="rest">00:00</div>
+      </div>
+    </div>
+
+    <!-- 按鈕跟container\ -->
+    <div class="container">
+      <button
+        id="startStop"
+        class="w-30 h-10 rounded mx-6 my-4 text-center bg-gray-200 text-gray-200 dark:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-600 ring-[1px] px-8 /"
+      >
+        開始
+      </button>
+      <button
+        id="reset"
+        class="w-30 h-10 rounded mx-6 my-4 text-center bg-gray-200 text-gray-200 dark:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-600 ring-[1px] px-8 /"
+      >
+        重置
+      </button>
+      <button
+        id="reset"
+        class="w-30 h-10 rounded mx-6 my-4 text-center bg-gray-200 text-gray-200 dark:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-600 ring-[1px] px-8 /"
+      >
+        休息（短）
+      </button>
+      <button
+        id="reset"
+        class="w-30 h-10 rounded mx-6 my-4 text-center bg-gray-200 text-gray-200 dark:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-600 ring-[1px] px-8 /"
+      >
+        休息（長）
+      </button>
+    </div>
+
+    <!-- 算有幾個session的地方 -->
+    <p class="SessionCount">Session 4/4</p>
   </body>
 </html>
