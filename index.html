@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="./style.css" />
     <script src="./script.js" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Tomato Timer</title>
+    <title>番茄時鐘</title>
   </head>
   <body>
     <!-- Logo -->
@@ -21,18 +21,18 @@
         <!-- 圓圈本圈(。・ω・。) -->
         <svg>
           <circle cx="70" cy="70" r="70"></circle>
-          <circle cx="70" cy="70" r="70"></circle>
+          <circle cx="70" cy="70" r="70" id="focuscircle"></circle>
         </svg>
-        <div id="focus">00:00</div>
+        <div id="focus">00:00<br /><span>Focus</span></div>
       </div>
 
       <div class="circle">
         <div class="dots rest_dot"></div>
         <svg>
           <circle cx="70" cy="70" r="70"></circle>
-          <circle cx="70" cy="70" r="70"></circle>
+          <circle cx="70" cy="70" r="70" id="restcircle"></circle>
         </svg>
-        <div id="rest">00:00</div>
+        <div id="rest">00:00<br /><span>Rest</span></div>
       </div>
     </div>
 
