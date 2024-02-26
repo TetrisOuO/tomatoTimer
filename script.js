@@ -28,11 +28,13 @@ function timer() {
 let docTitle = document.title; //設定初始時的文件名稱
 window.addEventListener("blur", () => {
   //沒有focus tab的 時候
-  document.title = "你要去哪？？？";
+  document.title = "你要去哪？？？"; //換標題
+  console.log("Changed Tab"); //在console出現
 });
 window.addEventListener("focus", () => {
   //切換回去的時候
-  document.title = "專注中。。。";
+  document.title = "專注中。。。"; //換標題
+  console.log("Back to Tab"); //在console出現
 });
 
 let focus = document.getElementById("focus");
@@ -44,25 +46,30 @@ let restcircle = document.getElementById("restcircle");
 let rest_dot = document.getElementById(".rest_dot");
 let focus_dot = document.getElementById(".focus_dot");
 
+// setting 25 minute timer
+let FocusTimeLeft = 25 * 60;
+
 // 把時間顯示出來
 // document.getElementById('focus').innerHTML = (video time 16:10)
 
-// <!DOCTYPE html>
-// <html>
-// <head>
-// <style>
-// .timer {
-// width: 100px;
-// height: 100px;
-// border-radius: 50%;
-// background-color: lightgrey;
-// line-height: 100px;
-// text-align: center;
-// font-size: 24px;
-// }
-// </style>
-// </head>
-// <body>
+function updateTimer() {
+  let min = Math.floor(FocusTimeLeft / 60);
+  let sec = FocusTimeLeft % 60;
+}
+if (sec < 10) {
+  sec = "0" + sec;
+}
+// show time
+focus.textContent = min + ":" + sec;
+
+//countdown
+if (FocusTimeLeft > 0) {
+  FocusTimeLeft--;
+}
+function startTimer() {
+  updateTimer();
+  setTimeout(startTimer, 1000); //update every second
+}
 
 // <div id="timer" class="timer">25:00</div>
 
@@ -93,7 +100,3 @@ let focus_dot = document.getElementById(".focus_dot");
 // }
 
 // startTimer();
-// </script>
-
-// </body>
-// </html>

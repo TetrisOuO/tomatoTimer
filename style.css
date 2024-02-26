@@ -35,7 +35,8 @@ body {
 /* 圓圈 */
 #timer .circle {
   position: relative;
- 
+  width: 150px;
+  height: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,8 +60,9 @@ body {
 
 #timer .circle svg circle:nth-child(2)
 {
-  stroke: #171616;
+  stroke: #666666;
   stroke-dasharray: 440;
+  stroke-dashoffset: 440;
 }
 
 
